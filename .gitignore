@@ -1,3 +1,5 @@
 /data/mongo/dump
 
 .DS_Store
+*.LOG
+*.log
