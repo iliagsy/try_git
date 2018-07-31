@@ -1,0 +1,782 @@
+disease OMIM:101000 pid 25 match 0.0666666666667
+rank of correct result in my alg: 23
+query_size 3
+disease OMIM:101000 pid 5 match 0.366666666667
+rank of correct result in my alg: 12
+query_size 3
+disease OMIM:101000 pid 17 match 0.166666666667
+rank of correct result in my alg: 54
+query_size 3
+disease OMIM:101000 pid 13 match 0.466666666667
+rank of correct result in my alg: 14
+query_size 3
+disease OMIM:101000 pid 29 match 0.1
+rank of correct result in my alg: 1
+query_size 4
+disease OMIM:101000 pid 21 match 0.6
+rank of correct result in my alg: 1
+query_size 5
+disease OMIM:101000 pid 9 match 0.366666666667
+rank of correct result in my alg: 45
+query_size 4
+disease OMIM:101000 pid 1 match 0.266666666667
+rank of correct result in my alg: 84
+query_size 4
+disease OMIM:105830 pid 21 match 0.3
+rank of correct result in my alg: 1
+query_size 5
+disease OMIM:105830 pid 29 match 0.0666666666667
+rank of correct result in my alg: 1
+query_size 5
+disease OMIM:105830 pid 5 match 0.133333333333
+rank of correct result in my alg: 1
+query_size 7
+disease OMIM:105830 pid 17 match 0.0
+rank of correct result in my alg: 115
+query_size 5
+disease OMIM:105830 pid 25 match 0.133333333333
+rank of correct result in my alg: 1
+query_size 10
+disease OMIM:105830 pid 13 match 0.233333333333
+rank of correct result in my alg: 1
+query_size 6
+disease OMIM:105830 pid 1 match 0.0333333333333
+rank of correct result in my alg: 1
+query_size 5
+disease OMIM:105830 pid 9 match 0.133333333333
+rank of correct result in my alg: 1
+query_size 8
+disease OMIM:107480 pid 9 match 0.0
+rank of correct result in my alg: 493
+query_size 1
+disease OMIM:107480 pid 29 match 0.1
+rank of correct result in my alg: 489
+query_size 2
+disease OMIM:107480 pid 17 match 0.0
+rank of correct result in my alg: 423
+query_size 2
+disease OMIM:107480 pid 21 match 0.1
+rank of correct result in my alg: 468
+query_size 3
+disease OMIM:108120 pid 5 match 0.466666666667
+rank of correct result in my alg: 1
+query_size 6
+disease OMIM:107480 pid 13 match 0.0
+rank of correct result in my alg: 402
+query_size 2
+disease OMIM:107480 pid 25 match 0.1
+rank of correct result in my alg: 493
+query_size 4
+disease OMIM:107480 pid 1 match 0.0666666666667
+rank of correct result in my alg: 491
+query_size 3
+disease OMIM:108120 pid 21 match 0.1
+rank of correct result in my alg: 12
+query_size 1
+disease OMIM:108120 pid 29 match 0.0
+rank of correct result in my alg: 15000
+query_size 2
+disease OMIM:108120 pid 9 match 0.366666666667
+rank of correct result in my alg: 14
+query_size 3
+disease OMIM:108120 pid 13 match 0.1
+rank of correct result in my alg: 1
+query_size 2
+disease OMIM:108120 pid 17 match 0.3
+rank of correct result in my alg: 1
+query_size 3
+disease OMIM:113620 pid 5 match 0.133333333333
+rank of correct result in my alg: 424
+query_size 10
+disease OMIM:108120 pid 25 match 0.3
+rank of correct result in my alg: 1
+query_size 4
+disease OMIM:108120 pid 1 match 0.333333333333
+rank of correct result in my alg: 1
+query_size 3
+disease OMIM:113620 pid 29 match 0.166666666667
+rank of correct result in my alg: 262
+query_size 16
+disease OMIM:113620 pid 21 match 0.0
+rank of correct result in my alg: 353
+query_size 11
+disease OMIM:113620 pid 9 match 0.133333333333
+rank of correct result in my alg: 26
+query_size 15
+disease OMIM:113620 pid 17 match 0.133333333333
+rank of correct result in my alg: 283
+query_size 16
+disease OMIM:113620 pid 25 match 0.133333333333
+rank of correct result in my alg: 384
+query_size 13
+disease OMIM:113650 pid 21 match 0.0
+rank of correct result in my alg: 112
+query_size 2
+disease OMIM:113620 pid 13 match 0.366666666667
+rank of correct result in my alg: 11
+query_size 18
+disease OMIM:113650 pid 5 match 0.0666666666667
+rank of correct result in my alg: 1
+query_size 5
+disease OMIM:119100 pid 21 match 0.0333333333333
+rank of correct result in my alg: 90
+query_size 1
+disease OMIM:113620 pid 1 match 0.266666666667
+rank of correct result in my alg: 62
+query_size 14
+disease OMIM:113650 pid 29 match 0.0
+rank of correct result in my alg: 1
+query_size 6
+disease OMIM:113650 pid 17 match 0.133333333333
+rank of correct result in my alg: 29
+query_size 3
+disease OMIM:113650 pid 9 match 0.0
+rank of correct result in my alg: 29
+query_size 3
+disease OMIM:119100 pid 5 match 0.633333333333
+rank of correct result in my alg: 28
+query_size 2
+disease OMIM:113650 pid 1 match 0.0
+rank of correct result in my alg: 450
+query_size 1
+disease OMIM:119100 pid 29 match 0.2
+rank of correct result in my alg: 16
+query_size 1
+disease OMIM:113650 pid 25 match 0.0
+rank of correct result in my alg: 29
+query_size 4
+disease OMIM:113650 pid 13 match 0.1
+rank of correct result in my alg: 27
+query_size 4
+disease OMIM:119100 pid 17 match 0.466666666667
+rank of correct result in my alg: 61
+query_size 4
+disease OMIM:119100 pid 9 match 0.166666666667
+rank of correct result in my alg: 102
+query_size 4
+disease OMIM:119500 pid 21 match 0.0666666666667
+rank of correct result in my alg: 1
+query_size 5
+disease OMIM:119100 pid 25 match 0.333333333333
+rank of correct result in my alg: 90
+query_size 1
+disease OMIM:119500 pid 29 match 0.233333333333
+rank of correct result in my alg: 13
+query_size 5
+disease OMIM:119100 pid 1 match 0.266666666667
+rank of correct result in my alg: 103
+query_size 5
+disease OMIM:119500 pid 5 match 0.1
+rank of correct result in my alg: 1
+query_size 6
+disease OMIM:119500 pid 9 match 0.1
+rank of correct result in my alg: 148
+query_size 5
+disease OMIM:119100 pid 13 match 0.0666666666667
+rank of correct result in my alg: 1
+query_size 4
+disease OMIM:121050 pid 21 match 0.266666666667
+rank of correct result in my alg: 54
+query_size 3
+disease OMIM:119500 pid 1 match 0.3
+rank of correct result in my alg: 416
+query_size 4
+disease OMIM:119500 pid 17 match 0.166666666667
+rank of correct result in my alg: 1
+query_size 4
+disease OMIM:119500 pid 25 match 0.166666666667
+rank of correct result in my alg: 298
+query_size 5
+disease OMIM:121050 pid 29 match 0.0666666666667
+rank of correct result in my alg: 6
+query_size 5
+disease OMIM:121050 pid 5 match 0.266666666667
+rank of correct result in my alg: 1
+query_size 7
+disease OMIM:119500 pid 13 match 0.4
+rank of correct result in my alg: 301
+query_size 4
+disease OMIM:121050 pid 9 match 0.266666666667
+rank of correct result in my alg: 55
+query_size 6
+disease OMIM:121050 pid 1 match 0.0666666666667
+rank of correct result in my alg: 366
+query_size 3
+disease OMIM:121050 pid 17 match 0.2
+rank of correct result in my alg: 276
+query_size 5
+disease OMIM:121050 pid 13 match 0.0
+rank of correct result in my alg: 15000
+query_size 2
+disease OMIM:122470 pid 21 match 0.0333333333333
+rank of correct result in my alg: 109
+query_size 18
+disease OMIM:121050 pid 25 match 0.433333333333
+rank of correct result in my alg: 12
+query_size 8
+disease OMIM:122470 pid 29 match 0.333333333333
+rank of correct result in my alg: 222
+query_size 17
+disease OMIM:122470 pid 9 match 0.2
+rank of correct result in my alg: 500
+query_size 23
+disease OMIM:122470 pid 5 match 0.166666666667
+rank of correct result in my alg: 393
+query_size 19
+disease OMIM:122470 pid 1 match 0.1
+rank of correct result in my alg: 499
+query_size 19
+disease OMIM:122470 pid 17 match 0.3
+rank of correct result in my alg: 323
+query_size 18
+disease OMIM:122470 pid 13 match 0.133333333333
+rank of correct result in my alg: 186
+query_size 16
+disease OMIM:129900 pid 29 match 0.0666666666667
+rank of correct result in my alg: 490
+query_size 4
+disease OMIM:129900 pid 9 match 0.0333333333333
+rank of correct result in my alg: 494
+query_size 11
+disease OMIM:122470 pid 25 match 0.1
+rank of correct result in my alg: 349
+query_size 16
+disease OMIM:129900 pid 21 match 0.233333333333
+rank of correct result in my alg: 108
+query_size 12
+disease OMIM:129900 pid 5 match 0.533333333333
+rank of correct result in my alg: 26
+query_size 9
+disease OMIM:129900 pid 1 match 0.3
+rank of correct result in my alg: 115
+query_size 7
+disease OMIM:129900 pid 13 match 0.0333333333333
+rank of correct result in my alg: 500
+query_size 7
+disease OMIM:129900 pid 17 match 0.4
+rank of correct result in my alg: 171
+query_size 11
+disease OMIM:131300 pid 29 match 0.1
+rank of correct result in my alg: 1
+query_size 7
+disease OMIM:129900 pid 25 match 0.133333333333
+rank of correct result in my alg: 499
+query_size 8
+disease OMIM:131300 pid 21 match 0.266666666667
+rank of correct result in my alg: 1
+query_size 6
+disease OMIM:131300 pid 9 match 0.133333333333
+rank of correct result in my alg: 1
+query_size 4
+disease OMIM:131300 pid 5 match 0.133333333333
+rank of correct result in my alg: 1
+query_size 3
+disease OMIM:131300 pid 1 match 0.4
+rank of correct result in my alg: 1
+query_size 7
+disease OMIM:131300 pid 13 match 0.3
+rank of correct result in my alg: 1
+query_size 6
+disease OMIM:131300 pid 17 match 0.366666666667
+rank of correct result in my alg: 1
+query_size 7
+disease OMIM:135900 pid 29 match 0.233333333333
+rank of correct result in my alg: 385
+query_size 9
+disease OMIM:135900 pid 9 match 0.166666666667
+rank of correct result in my alg: 440
+query_size 10
+disease OMIM:131300 pid 25 match 0.0666666666667
+rank of correct result in my alg: 1
+query_size 7
+disease OMIM:135900 pid 21 match 0.1
+rank of correct result in my alg: 416
+query_size 12
+disease OMIM:135900 pid 5 match 0.133333333333
+rank of correct result in my alg: 403
+query_size 10
+disease OMIM:142900 pid 9 match 0.0666666666667
+rank of correct result in my alg: 382
+query_size 1
+disease OMIM:135900 pid 1 match 0.166666666667
+rank of correct result in my alg: 454
+query_size 10
+disease OMIM:135900 pid 13 match 0.166666666667
+rank of correct result in my alg: 419
+query_size 11
+disease OMIM:142900 pid 29 match 0.0666666666667
+rank of correct result in my alg: 15
+query_size 2
+disease OMIM:135900 pid 17 match 0.2
+rank of correct result in my alg: 461
+query_size 10
+disease OMIM:142900 pid 21 match 0.0
+rank of correct result in my alg: 93
+query_size 1
+disease OMIM:135900 pid 25 match 0.233333333333
+rank of correct result in my alg: 459
+query_size 13
+disease OMIM:142900 pid 5 match 0.0333333333333
+rank of correct result in my alg: 382
+query_size 1
+disease OMIM:142900 pid 25 match 0.0
+rank of correct result in my alg: 93
+query_size 1
+disease OMIM:142900 pid 1 match 0.0
+rank of correct result in my alg: 285
+query_size 2
+disease OMIM:142900 pid 13 match 0.0
+rank of correct result in my alg: 15
+query_size 2
+disease OMIM:142900 pid 17 match 0.0666666666667
+rank of correct result in my alg: 96
+query_size 2
+disease OMIM:147920 pid 9 match 0.233333333333
+rank of correct result in my alg: 113
+query_size 5
+disease OMIM:147920 pid 21 match 0.3
+rank of correct result in my alg: 323
+query_size 6
+disease OMIM:147920 pid 29 match 0.0333333333333
+rank of correct result in my alg: 153
+query_size 6
+disease OMIM:147920 pid 1 match 0.3
+rank of correct result in my alg: 382
+query_size 6
+disease OMIM:147920 pid 13 match 0.0333333333333
+rank of correct result in my alg: 381
+query_size 6
+disease OMIM:147920 pid 5 match 0.1
+rank of correct result in my alg: 16
+query_size 6
+disease OMIM:147920 pid 17 match 0.233333333333
+rank of correct result in my alg: 355
+query_size 6
+disease OMIM:149730 pid 9 match 0.333333333333
+rank of correct result in my alg: 1
+query_size 8
+disease OMIM:147920 pid 25 match 0.0
+rank of correct result in my alg: 174
+query_size 7
+disease OMIM:149730 pid 29 match 0.3
+rank of correct result in my alg: 1
+query_size 8
+disease OMIM:149730 pid 21 match 0.2
+rank of correct result in my alg: 1
+query_size 6
+disease OMIM:149730 pid 13 match 0.366666666667
+rank of correct result in my alg: 1
+query_size 8
+disease OMIM:149730 pid 1 match 0.366666666667
+rank of correct result in my alg: 1
+query_size 8
+disease OMIM:149730 pid 5 match 0.333333333333
+rank of correct result in my alg: 1
+query_size 8
+disease OMIM:149730 pid 17 match 0.3
+rank of correct result in my alg: 1
+query_size 7
+disease OMIM:149730 pid 25 match 0.3
+rank of correct result in my alg: 1
+query_size 7
+disease OMIM:153400 pid 21 match 0.1
+rank of correct result in my alg: 1
+query_size 4
+disease OMIM:153400 pid 29 match 0.266666666667
+rank of correct result in my alg: 1
+query_size 3
+disease OMIM:153400 pid 9 match 0.0333333333333
+rank of correct result in my alg: 3
+query_size 5
+disease OMIM:153400 pid 1 match 0.633333333333
+rank of correct result in my alg: 1
+query_size 3
+disease OMIM:153400 pid 13 match 0.1
+rank of correct result in my alg: 84
+query_size 4
+disease OMIM:153400 pid 17 match 0.233333333333
+rank of correct result in my alg: 1
+query_size 2
+disease OMIM:153400 pid 5 match 0.366666666667
+rank of correct result in my alg: 1
+query_size 4
+disease OMIM:161200 pid 29 match 0.5
+rank of correct result in my alg: 115
+query_size 7
+disease OMIM:153400 pid 25 match 0.133333333333
+rank of correct result in my alg: 45
+query_size 3
+disease OMIM:161200 pid 21 match 0.133333333333
+rank of correct result in my alg: 69
+query_size 6
+disease OMIM:161200 pid 1 match 0.1
+rank of correct result in my alg: 180
+query_size 3
+disease OMIM:161200 pid 9 match 0.133333333333
+rank of correct result in my alg: 111
+query_size 7
+disease OMIM:161200 pid 13 match 0.2
+rank of correct result in my alg: 122
+query_size 7
+disease OMIM:161200 pid 5 match 0.3
+rank of correct result in my alg: 66
+query_size 7
+disease OMIM:161200 pid 17 match 0.0333333333333
+rank of correct result in my alg: 355
+query_size 9
+disease OMIM:161200 pid 25 match 0.166666666667
+rank of correct result in my alg: 272
+query_size 4
+disease OMIM:162200 pid 21 match 0.5
+rank of correct result in my alg: 107
+query_size 5
+disease OMIM:162200 pid 29 match 0.366666666667
+rank of correct result in my alg: 145
+query_size 4
+disease OMIM:162200 pid 1 match 0.4
+rank of correct result in my alg: 75
+query_size 4
+disease OMIM:162200 pid 9 match 0.366666666667
+rank of correct result in my alg: 42
+query_size 4
+disease OMIM:162200 pid 5 match 0.4
+rank of correct result in my alg: 106
+query_size 5
+disease OMIM:162200 pid 13 match 0.433333333333
+rank of correct result in my alg: 209
+query_size 5
+disease OMIM:162200 pid 17 match 0.433333333333
+rank of correct result in my alg: 1
+query_size 7
+disease OMIM:175700 pid 21 match 0.0666666666667
+rank of correct result in my alg: 117
+query_size 6
+disease OMIM:162200 pid 25 match 0.3
+rank of correct result in my alg: 22
+query_size 4
+disease OMIM:175700 pid 29 match 0.0333333333333
+rank of correct result in my alg: 28
+query_size 7
+disease OMIM:175700 pid 9 match 0.0
+rank of correct result in my alg: 297
+query_size 5
+disease OMIM:175700 pid 1 match 0.0
+rank of correct result in my alg: 392
+query_size 4
+disease OMIM:175700 pid 5 match 0.233333333333
+rank of correct result in my alg: 133
+query_size 3
+disease OMIM:175700 pid 17 match 0.233333333333
+rank of correct result in my alg: 258
+query_size 5
+disease OMIM:175700 pid 13 match 0.0666666666667
+rank of correct result in my alg: 188
+query_size 4
+disease OMIM:176450 pid 17 match 0.0666666666667
+rank of correct result in my alg: 87
+query_size 1
+disease OMIM:176450 pid 21 match 0.0333333333333
+rank of correct result in my alg: 79
+query_size 3
+disease OMIM:176450 pid 5 match 0.0
+rank of correct result in my alg: 167
+query_size 2
+disease OMIM:175700 pid 25 match 0.0333333333333
+rank of correct result in my alg: 412
+query_size 3
+disease OMIM:176450 pid 1 match 0.0666666666667
+rank of correct result in my alg: 109
+query_size 2
+disease OMIM:176450 pid 29 match 0.233333333333
+rank of correct result in my alg: 77
+query_size 5
+disease OMIM:176450 pid 9 match 0.333333333333
+rank of correct result in my alg: 54
+query_size 3
+disease OMIM:176450 pid 13 match 0.333333333333
+rank of correct result in my alg: 54
+query_size 3
+disease OMIM:176450 pid 25 match 0.233333333333
+rank of correct result in my alg: 167
+query_size 2
+disease OMIM:180849 pid 21 match 0.0666666666667
+rank of correct result in my alg: 400
+query_size 20
+disease OMIM:180849 pid 17 match 0.0333333333333
+rank of correct result in my alg: 1
+query_size 21
+disease OMIM:180849 pid 1 match 0.0
+rank of correct result in my alg: 154
+query_size 27
+disease OMIM:180849 pid 13 match 0.0333333333333
+rank of correct result in my alg: 404
+query_size 22
+disease OMIM:180849 pid 9 match 0.0
+rank of correct result in my alg: 83
+query_size 20
+disease OMIM:180849 pid 29 match 0.0333333333333
+rank of correct result in my alg: 1
+query_size 24
+disease OMIM:180849 pid 5 match 0.0666666666667
+rank of correct result in my alg: 110
+query_size 17
+disease OMIM:180849 pid 25 match 0.233333333333
+rank of correct result in my alg: 309
+query_size 19
+disease OMIM:182212 pid 21 match 0.0
+rank of correct result in my alg: 1
+query_size 15
+disease OMIM:182212 pid 1 match 0.0
+rank of correct result in my alg: 1
+query_size 17
+disease OMIM:182212 pid 17 match 0.0
+rank of correct result in my alg: 1
+query_size 19
+disease OMIM:182212 pid 9 match 0.1
+rank of correct result in my alg: 43
+query_size 13
+disease OMIM:182212 pid 29 match 0.0
+rank of correct result in my alg: 1
+query_size 16
+disease OMIM:182212 pid 5 match 0.0
+rank of correct result in my alg: 2
+query_size 9
+disease OMIM:182212 pid 13 match 0.0
+rank of correct result in my alg: 1
+query_size 15
+disease OMIM:182212 pid 25 match 0.0
+rank of correct result in my alg: 1
+query_size 15
+disease OMIM:191100 pid 21 match 0.333333333333
+rank of correct result in my alg: 245
+query_size 10
+disease OMIM:191100 pid 17 match 0.2
+rank of correct result in my alg: 185
+query_size 8
+disease OMIM:191100 pid 9 match 0.2
+rank of correct result in my alg: 139
+query_size 7
+disease OMIM:191100 pid 1 match 0.3
+rank of correct result in my alg: 141
+query_size 14
+disease OMIM:191100 pid 5 match 0.2
+rank of correct result in my alg: 145
+query_size 10
+disease OMIM:191100 pid 29 match 0.266666666667
+rank of correct result in my alg: 120
+query_size 12
+disease OMIM:191100 pid 13 match 0.233333333333
+rank of correct result in my alg: 70
+query_size 10
+disease OMIM:191100 pid 25 match 0.233333333333
+rank of correct result in my alg: 1
+query_size 9
+disease OMIM:193300 pid 17 match 0.0333333333333
+rank of correct result in my alg: 3
+query_size 1
+disease OMIM:193300 pid 9 match 0.233333333333
+rank of correct result in my alg: 256
+query_size 5
+disease OMIM:193300 pid 21 match 0.266666666667
+rank of correct result in my alg: 6
+query_size 3
+disease OMIM:193300 pid 1 match 0.0
+rank of correct result in my alg: 58
+query_size 3
+disease OMIM:193300 pid 29 match 0.166666666667
+rank of correct result in my alg: 5
+query_size 2
+disease OMIM:193300 pid 5 match 0.2
+rank of correct result in my alg: 39
+query_size 4
+disease OMIM:193300 pid 13 match 0.266666666667
+rank of correct result in my alg: 48
+query_size 2
+disease OMIM:193300 pid 25 match 0.0333333333333
+rank of correct result in my alg: 265
+query_size 4
+disease OMIM:193700 pid 17 match 0.266666666667
+rank of correct result in my alg: 1
+query_size 7
+disease OMIM:193700 pid 21 match 0.2
+rank of correct result in my alg: 108
+query_size 9
+disease OMIM:193700 pid 9 match 0.333333333333
+rank of correct result in my alg: 1
+query_size 7
+disease OMIM:193700 pid 29 match 0.233333333333
+rank of correct result in my alg: 1
+query_size 7
+disease OMIM:193700 pid 1 match 0.3
+rank of correct result in my alg: 60
+query_size 8
+disease OMIM:193700 pid 13 match 0.233333333333
+rank of correct result in my alg: 27
+query_size 13
+disease OMIM:193700 pid 5 match 0.2
+rank of correct result in my alg: 1
+query_size 7
+disease OMIM:193700 pid 25 match 0.1
+rank of correct result in my alg: 67
+query_size 8
+disease OMIM:209900 pid 17 match 0.266666666667
+rank of correct result in my alg: 1
+query_size 9
+disease OMIM:209900 pid 21 match 0.0333333333333
+rank of correct result in my alg: 21
+query_size 11
+disease OMIM:209900 pid 1 match 0.333333333333
+rank of correct result in my alg: 23
+query_size 10
+disease OMIM:209900 pid 9 match 0.0333333333333
+rank of correct result in my alg: 6
+query_size 8
+disease OMIM:209900 pid 29 match 0.133333333333
+rank of correct result in my alg: 5
+query_size 10
+disease OMIM:209900 pid 5 match 0.3
+rank of correct result in my alg: 8
+query_size 11
+disease OMIM:209900 pid 25 match 0.0666666666667
+rank of correct result in my alg: 1
+query_size 7
+disease OMIM:209900 pid 13 match 0.466666666667
+rank of correct result in my alg: 7
+query_size 12
+disease OMIM:211350 pid 17 match 0.466666666667
+rank of correct result in my alg: 1
+query_size 4
+pid 17 failed.
+ message: cursor id '41834735444' not valid at server
+Traceback (most recent call last):
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/test/eval_on_bm.py", line 66, in eval
+    for d in cur:
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/cursor.py", line 1090, in next
+    if len(self.__data) or self._refresh():
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/cursor.py", line 1039, in _refresh
+    limit, self.__id))
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/cursor.py", line 958, in __send_message
+    self.__compile_re)
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/helpers.py", line 101, in _unpack_response
+    cursor_id)
+CursorNotFound: cursor id '41834735444' not valid at server
+disease OMIM:211350 pid 21 match 0.166666666667
+rank of correct result in my alg: 1
+query_size 6
+pid 21 failed.
+ message: cursor id '42371085480' not valid at server
+Traceback (most recent call last):
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/test/eval_on_bm.py", line 66, in eval
+    for d in cur:
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/cursor.py", line 1090, in next
+    if len(self.__data) or self._refresh():
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/cursor.py", line 1039, in _refresh
+    limit, self.__id))
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/cursor.py", line 958, in __send_message
+    self.__compile_re)
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/helpers.py", line 101, in _unpack_response
+    cursor_id)
+CursorNotFound: cursor id '42371085480' not valid at server
+disease OMIM:211350 pid 1 match 0.266666666667
+rank of correct result in my alg: 1
+query_size 6
+pid 1 failed.
+ message: cursor id '40627966601' not valid at server
+Traceback (most recent call last):
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/test/eval_on_bm.py", line 66, in eval
+    for d in cur:
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/cursor.py", line 1090, in next
+    if len(self.__data) or self._refresh():
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/cursor.py", line 1039, in _refresh
+    limit, self.__id))
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/cursor.py", line 958, in __send_message
+    self.__compile_re)
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/helpers.py", line 101, in _unpack_response
+    cursor_id)
+CursorNotFound: cursor id '40627966601' not valid at server
+disease OMIM:211350 pid 9 match 0.233333333333
+rank of correct result in my alg: 1
+query_size 4
+pid 9 failed.
+ message: cursor id '39312478174' not valid at server
+Traceback (most recent call last):
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/test/eval_on_bm.py", line 66, in eval
+    for d in cur:
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/cursor.py", line 1090, in next
+    if len(self.__data) or self._refresh():
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/cursor.py", line 1039, in _refresh
+    limit, self.__id))
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/cursor.py", line 958, in __send_message
+    self.__compile_re)
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/helpers.py", line 101, in _unpack_response
+    cursor_id)
+CursorNotFound: cursor id '39312478174' not valid at server
+disease OMIM:211350 pid 29 match 0.366666666667
+rank of correct result in my alg: 1
+query_size 5
+pid 29 failed.
+ message: cursor id '41436631764' not valid at server
+Traceback (most recent call last):
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/test/eval_on_bm.py", line 66, in eval
+    for d in cur:
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/cursor.py", line 1090, in next
+    if len(self.__data) or self._refresh():
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/cursor.py", line 1039, in _refresh
+    limit, self.__id))
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/cursor.py", line 958, in __send_message
+    self.__compile_re)
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/helpers.py", line 101, in _unpack_response
+    cursor_id)
+CursorNotFound: cursor id '41436631764' not valid at server
+disease OMIM:211350 pid 13 match 0.333333333333
+rank of correct result in my alg: 5
+query_size 4
+pid 13 failed.
+ message: cursor id '39658456385' not valid at server
+Traceback (most recent call last):
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/test/eval_on_bm.py", line 66, in eval
+    for d in cur:
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/cursor.py", line 1090, in next
+    if len(self.__data) or self._refresh():
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/cursor.py", line 1039, in _refresh
+    limit, self.__id))
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/cursor.py", line 958, in __send_message
+    self.__compile_re)
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/helpers.py", line 101, in _unpack_response
+    cursor_id)
+CursorNotFound: cursor id '39658456385' not valid at server
+disease OMIM:211350 pid 5 match 0.3
+rank of correct result in my alg: 1
+query_size 5
+disease OMIM:211350 pid 25 match 0.3
+rank of correct result in my alg: 1
+query_size 4
+pid 5 failed.
+ message: cursor id '38953675126' not valid at server
+Traceback (most recent call last):
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/test/eval_on_bm.py", line 66, in eval
+    for d in cur:
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/cursor.py", line 1090, in next
+    if len(self.__data) or self._refresh():
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/cursor.py", line 1039, in _refresh
+    limit, self.__id))
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/cursor.py", line 958, in __send_message
+    self.__compile_re)
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/helpers.py", line 101, in _unpack_response
+    cursor_id)
+CursorNotFound: cursor id '38953675126' not valid at server
+pid 25 failed.
+ message: cursor id '39260496822' not valid at server
+Traceback (most recent call last):
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/test/eval_on_bm.py", line 66, in eval
+    for d in cur:
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/cursor.py", line 1090, in next
+    if len(self.__data) or self._refresh():
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/cursor.py", line 1039, in _refresh
+    limit, self.__id))
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/cursor.py", line 958, in __send_message
+    self.__compile_re)
+  File "/Users/gaoshiyu/Desktop/genedock/phenomizer/venv-dev/lib/python2.7/site-packages/pymongo/helpers.py", line 101, in _unpack_response
+    cursor_id)
+CursorNotFound: cursor id '39260496822' not valid at server
+operation aborted halfway

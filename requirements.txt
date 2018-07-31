@@ -1,2 +1,2 @@
-Flask
-Redis
+pymongo==2.8.1
+pycrypto

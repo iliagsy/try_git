@@ -1,0 +1,10 @@
+{
+    "very rare": 0.01,
+    "rare": 0.05,
+    "occasional": 0.075,
+    "main": 0.25,
+    "frequent": 0.33,
+    "typical": 0.5,
+    "common": 0.5,
+    "hallmark": 0.9
+}
