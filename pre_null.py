@@ -1,6 +1,7 @@
 from argparse import ArgumentParser
 from Crypto.Random.random import StrongRandom
 import datetime
+import json
 import logging
 from multiprocessing.pool import ThreadPool
 from pymongo import MongoClient
@@ -17,9 +18,9 @@ null_result = 'benchmark_result_null'
 ########################
 
 
-logging.basicConfig(stream=sys.stderr, format="%(message)s")
+logging_conf_d = json.load(open("logging_conf.json", 'rb'))
+logging.config.dictConfig(logging_conf_d)
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
 
 random = StrongRandom()
 

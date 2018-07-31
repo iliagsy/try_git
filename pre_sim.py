@@ -1,7 +1,9 @@
 # coding: utf8
 from argparse import ArgumentParser
 import datetime
+import json
 import logging
+import logging.config
 from multiprocessing.pool import ThreadPool
 from pymongo import MongoClient
 import sys
@@ -16,9 +18,9 @@ disease_sim = 'hpo_disease_sim_'
 ####################
 
 
-logging.basicConfig(stream=sys.stdout, format="%(message)s")
+logging_conf_d = json.load(open("logging_conf.json", 'rb'))
+logging.config.dictConfig(logging_conf_d)
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
 
 
 class StoreDiseaseSim(object):
@@ -163,7 +165,6 @@ def store_disease_sim(db, drop=False, start_hpo1=1, end_hpo1=14000):
                         "score": IC
                     }
                 }, upsert=True)
-        # print hpo1, hpo2, IC
 
 
 
