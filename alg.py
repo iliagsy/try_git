@@ -57,34 +57,32 @@ class NullDistManager(BaseManager):
 
     def __init__(self, *args, **kwargs):
         BaseManager.__init__(self, *args, **kwargs)
-        NullDistManager.all_dis_used = self.find_one({"type": "meta", "key": "all_diseases_used"})['value']
 
     def get_p_value(self, query_size, disease_score_d):
-        all_dis_used = self.all_dis_used
-        result = []
-
-        disease_score_d = {all_dis_used.index(k):v for k,v in disease_score_d.items()}
-
+        #####################
+        cand_lim = 500
         stats = self.find_one({"type": "meta", "key": "stats", "query_size": query_size})['value']
         cand = []
         for d in stats:
             disease = d['disease']
             scr = disease_score_d.get(disease, 0.0)
-            median, upper_qt, tenth, _id = map(d.get, ['median', 'upper_qt', 'tenth', "_id"])
+            median, upper_qt, _id = map(d.get, ['median', 'upper_qt', "_id"])
             # wgt = (scr - median)**3 + (scr - upper_qt)**3
             wgt = scr - median
-            cand.append((_id, wgt))
-        cand.sort(key=lambda t: t[1], reverse=True)
-        cand = cand[:500]
-        cand_ids = [t[0] for t in cand]
-
-        cur_ = self.find({"type": "data", "_id": {"$in": cand_ids}})
-        for d in cur_:
-            disease = all_dis_used[d['disease']]
-            scr = disease_score_d.get(d['disease'], 0.0)
-
-            rounded_scr = "{:>010.3f}".format(scr).replace('.', '_')
-            scr_w_cnt = sorted(d['dist'].items(), key=lambda t: t[0])
+            if wgt > 0:
+                cand.append((_id, wgt, scr))
+        if len(cand) > cand_lim:
+            cand.sort(key=lambda t: t[1], reverse=True)
+            cand = cand[:cand_lim]
+        #############################
+        result = []
+        for _id, wgt, scr in cand:
+            d = self.find_one({"_id": _id})
+            disease = d['disease']
+            # scr = disease_score_d.get(d['disease'], 0.0)
+            rounded_scr = round(scr, 4)
+            items = [(float(k.replace('_', '.')), v) for k,v in d['dist'].items()]
+            scr_w_cnt = sorted(items, key=lambda t: t[0])
             l_scr_sorted = map(lambda t: t[0], scr_w_cnt)
             idx = bisect.bisect_left(l_scr_sorted, rounded_scr)
             if idx < len(l_scr_sorted):
@@ -92,9 +90,8 @@ class NullDistManager(BaseManager):
             else:
                 cnt_sum = 0
             p = cnt_sum / float(d['n_sample'])
-            p = round(p, 4)
             result.append([disease, p, scr])
-        result.sort(key=lambda t: (t[1], -t[2]))  # 按{p_value:1, raw_score:-1} 排序
+        result.sort(key=lambda t: t[1])  # 按{p_value:1} 排序
         sorted_p_value = map(lambda t: t[1], result)
         # p_value multi-test correction
         for i in xrange(len(result)):
@@ -113,7 +110,7 @@ def get_diseases(db, hpos, null=True):
         return dis_w_raw_scr
         
     dis_scr_d = dict(dis_w_raw_scr)
-    q_size = min(len(hpos), 50)
+    q_size = min(len(hpos), 29)
     if q_size > 10:
         q_size = q_size / 10 * 10
     try:

@@ -27,16 +27,16 @@ freq_excl = 'HP:0040285'
 def store_anno(db, drop=False):
     '''hpo_tree'''
     _store_anno_raw(db, drop)
-    _clear_anno_anc(db)
-    _clear_anno_excluded(db)
+    _clear_anno_excluded(db)  # first
+    _clear_anno_anc(db)       # second
 
 
 def _store_anno_raw(db, drop=False, filename='data/phenotype.hpoa'):
     if drop:
         db.drop_collection(hpo_disease)
-        db[hpo_disease].createIndex([("frequency",1)])
-        db[hpo_disease].createIndex([("hpo",1)])
-        db[hpo_disease].createIndex(["disease",1])
+        db[hpo_disease].create_index([("frequency",1)])
+        db[hpo_disease].create_index([("hpo",1)])
+        db[hpo_disease].create_index([("disease",1)])
     def gen():
         keys = []
         with open(filename) as fh:

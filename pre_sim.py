@@ -41,6 +41,7 @@ class StoreDiseaseSim(object):
         self.disease_sim_manager.create_index([("up_date",-1)])
         self.disease_sim_manager.create_index([("ct_date", -1)])
         self.disease_sim_manager.create_index([("type",1), ("key",1)])
+        self.lca_manager.create_index([("traversed", 1)])
 
         doc = self.disease_sim_manager.find_one({"type": "meta", "key": "all_hpos_used"})
         if doc is None:
@@ -74,7 +75,8 @@ class StoreDiseaseSim(object):
         try:
             if self.stop_event.is_set():
                 return False
-            cur = self.lca_manager.find({"range": range_, "hpo1": {"$gte": self.start_hpo1, "$lt": self.end_hpo1}, "type": "data"}, no_cursor_timeout=True
+            self.lca_manager.remove({"traversed": True}, multi=True)
+            cur = self.lca_manager.find("range": range_, "hpo1": {"$gte": self.start_hpo1, "$lt": self.end_hpo1}, "type": "data"}, no_cursor_timeout=True
                                         ).sort([("hpo1", 1)]
                                         ).batch_size(1)
             for d in cur:
@@ -102,6 +104,7 @@ class StoreDiseaseSim(object):
                                 "score": IC
                             }
                         }, upsert=True)
+                self.lca_manager.update({"_id": d['_id']}, {"$set": {"traversed": True}})
         except Exception as e:
             logger.exception("range `{}` failed,\n message: {}".format(range_, str(e)))
             return False
