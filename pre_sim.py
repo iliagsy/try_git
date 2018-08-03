@@ -75,8 +75,8 @@ class StoreDiseaseSim(object):
         try:
             if self.stop_event.is_set():
                 return False
-            self.lca_manager.remove({"traversed": True}, multi=True)
-            cur = self.lca_manager.find({"range": range_, "hpo1": {"$gte": self.start_hpo1, "$lt": self.end_hpo1}, "type": "data"}, no_cursor_timeout=True
+            # self.lca_manager.remove({"range": range_, "traversed": True}, multi=True)
+            cur = self.lca_manager.find({"traversed": {"$ne": True}, "range": range_, "hpo1": {"$gte": self.start_hpo1, "$lt": self.end_hpo1}, "type": "data"}, no_cursor_timeout=True
                                         ).sort([("hpo1", 1)]
                                         ).batch_size(1)
             for d in cur:
