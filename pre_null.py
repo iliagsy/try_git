@@ -28,9 +28,10 @@ random = StrongRandom()
 
 
 class StoreNull(object):
-    def __init__(self, prep_sim_manager, null_manager, n_query=128, pool_size=4):
+    def __init__(self, prep_sim_manager, null_manager, precision=3, n_query=128, pool_size=4):
         self.prep_sim_manager = prep_sim_manager
         self.null_manager = null_manager
+        self.precision = precision
         self.pool_size = pool_size
         self.n_query = n_query
 
@@ -77,7 +78,7 @@ class StoreNull(object):
                 result_d = dict(result_w_dn)
                 for disease in self.all_dis_used_sim:
                     scr = result_d.get(disease, 0.0)
-                    scr_key = "{:.3f}".format(scr).replace('.', '_')
+                    scr_key = "{1:.{0}f}".format(self.precision, scr).replace('.', '_')                       
                     self.null_manager.update({"query_size": size, "disease": disease}, {
                         "$set": {
                             "type": "data",
@@ -97,13 +98,12 @@ class StoreNull(object):
         return random.sample(self.all_hpos_used_idx, size)
 
 
-
-
 if __name__ == '__main__':
     parser = ArgumentParser()
     parser.add_argument('-n', '--n-query', type=int, default=10)
+    parser.add_argument('-p', '--precision', type=int, default=3)
     parsed = parser.parse_args()
     db = MongoClient("localhost", 27017)['phenomizer']
-    store_null = StoreNull(db[disease_sim], db[null_dist], parsed.n_query)
+    store_null = StoreNull(db[disease_sim], db[null_dist], precision=parsed.precision, n_query=parsed.n_query)
     store_null.run()
 

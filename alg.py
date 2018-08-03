@@ -67,7 +67,6 @@ class NullDistManager(BaseManager):
             disease = d['disease']
             scr = disease_score_d.get(disease, 0.0)
             median, upper_qt, _id = map(d.get, ['median', 'upper_qt', "_id"])
-            # wgt = (scr - median)**3 + (scr - upper_qt)**3
             wgt = scr - median
             if wgt > 0:
                 cand.append((_id, wgt, scr))
@@ -79,7 +78,6 @@ class NullDistManager(BaseManager):
         for _id, wgt, scr in cand:
             d = self.find_one({"_id": _id})
             disease = d['disease']
-            # scr = disease_score_d.get(d['disease'], 0.0)
             rounded_scr = round(scr, 4)
             items = [(float(k.replace('_', '.')), v) for k,v in d['dist'].items()]
             scr_w_cnt = sorted(items, key=lambda t: t[0])
