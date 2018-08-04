@@ -78,6 +78,9 @@ class StoreDiseaseSim(object):
             cur = self.lca_manager.find({"traversed": {"$ne": True}, "range": range_, "hpo1": {"$gte": self.start_hpo1, "$lt": self.end_hpo1}, "type": "data"}, no_cursor_timeout=True
                                         ).sort([("hpo1", 1)]
                                         ).batch_size(1)
+            c1 = cur.count()
+            c2 = self.lca_manager.find({"range": range_, "hpo1": {"$gte": self.start_hpo1, "$lt": self.end_hpo1}, "type": "data"}).count()
+            logger.debug("not traversed {c1} all {c2}".format(c1=c1,c2=c2))
             for d in cur:
                 hpo1_id = d['hpo1']
                 hpo2_id = hpo1_id + d['range']
