@@ -1,11 +1,9 @@
 # coding: utf-8
+'''hpo-obo-file -> hpo_tree, hpo_anc'''
 from collections import deque
 import itertools
 from pymongo import MongoClient
 import random
-
-
-from util import setupLogger
 
 
 #############
@@ -92,38 +90,6 @@ def _clear_hpo_tree_subonto(db):
         })
 
 
-def store_descendents(db, drop=False):
-    '''hpo_tree -> hpo_desc'''
-    if drop:
-        db.drop_collection(hpo_desc)
-    leaves = db[hpo_tree].find({"children": {"$size": 0}})
-    while True:
-        ps = set()
-        for _d in leaves:
-            hpo = _d[u'hpo']
-            descendents = set([hpo])
-            for c in _d[u'children']:
-                desc_of_child = (db[hpo_desc].find_one({"hpo": c}) or {}).get(u'descendents', [])
-                if len(desc_of_child) > 0:
-                    descendents |= set(desc_of_child)
-                else:
-                    descendents = None
-                    break
-            if descendents is None:
-                # if not (所有子节点的后代都算出来了): 不处理当前节点
-                continue
-            print 'storing {} descendents for hpo {}'.format(len(descendents), hpo)
-            db[hpo_desc].update({"hpo": hpo}, {
-                "$set": {
-                    "descendents": list(descendents)
-                }
-            }, upsert=True)
-            ps |= set(_d[u'parents'])
-        if len(ps) == 0:
-            break
-        leaves = db[hpo_tree].find({"hpo": {"$in": list(ps)}})
-
-
 def store_ancestors(db, drop=False):
     '''hpo_tree -> hpo_anc'''
     if drop:
@@ -167,7 +133,10 @@ def store_ancestors(db, drop=False):
         leaves = list(leaves_)
 
 
-def _add_depth_2_tree(db):
+def add_depth_2_tree(db):
+    '''hpo_tree -> hpo_tree
+    每个节点的depth = 它离根最远的路径长度
+    '''
     hpo_dag = hpo_tree
     root = db[hpo_dag].find_one({"parents": {"$size": 0}})['hpo']
     q = deque([(root, 0)])
@@ -186,15 +155,12 @@ def _add_depth_2_tree(db):
 
 def setupHpoTree(db, drop=False):
     store_hpo_tree(db, drop=drop)
-    store_descendents(db, drop=drop)
+    add_depth_2_tree(db)
+
     store_ancestors(db, drop=drop)
-
-
 
 
 if __name__ == '__main__':
     db = MongoClient('localhost', 27017)['phenomizer']
     
-    _add_depth_2_tree(db)
-    store_ancestors(db, drop=True)
     

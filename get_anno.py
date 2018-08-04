@@ -1,5 +1,5 @@
 # coding: utf-8
-'''本脚本执行的前提：hpo_tree, hpo_anc'''
+'''hpo_tree, hpo_anc, annotation-text-file -> hpo_disease'''
 from collections import deque
 import itertools
 from pymongo import MongoClient
@@ -7,16 +7,10 @@ import random
 import datetime
 
 
-from util import setupLogger
-
-
 #######
-logger = setupLogger(__name__, "log/{}.log".format(__file__))
 hpo_tree = 'hpo_tree'
 hpo_disease = 'hpo_disease'
 hpo_anc = 'hpo_anc'
-hpo_desc = 'hpo_desc'
-hpo_IC = 'hpo_IC'
 ##########
 
 ##################
@@ -74,7 +68,9 @@ def _clear_anno_excluded(db):
 
 
 def _clear_anno_anc(db):
-    '''hpo_anc, hpo_disease -> hpo_disease'''
+    '''hpo_anc, hpo_disease -> hpo_disease
+    祖先和后代同时注释的，祖先的条目设true_path=True
+    '''
     all_hpos = db[hpo_disease].distinct("hpo")
     cur = db[hpo_disease].aggregate([
         {"$group": {"_id": "$hpo", "diseases": {"$push": "$disease"}}}

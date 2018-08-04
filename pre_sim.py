@@ -61,8 +61,6 @@ class StoreDiseaseSim(object):
         self.IC_map = {d['hpo']:d['IC'] for d in cur}
         hpo_anno = self.anno_manager.distinct("hpo")
         self.hpo_anno_ids = map(self.all_hpos.index, hpo_anno)
-        self.hpo_anno_ids.sort()
-        logger.debug(self.hpo_anno_ids)
 
         ranges = self.lca_manager.find({"hpo1": {"$gte": self.start_hpo1, "$lt": self.end_hpo1}}).distinct("range")
         pool = ThreadPool(processes=self.pool_size)
@@ -80,14 +78,11 @@ class StoreDiseaseSim(object):
             cur = self.lca_manager.find({"traversed": {"$ne": True}, "range": range_, "hpo1": {"$gte": self.start_hpo1, "$lt": self.end_hpo1}, "type": "data"}, no_cursor_timeout=True
                                         ).sort([("hpo1", 1)]
                                         ).batch_size(1)
-            c1 = cur.count()
-            c2 = self.lca_manager.find({"range": range_, "hpo1": {"$gte": self.start_hpo1, "$lt": self.end_hpo1}, "type": "data"}).count()
-            logger.debug("not traversed {c1} all {c2}".format(c1=c1,c2=c2))
             for d in cur:
                 hpo1_id = d['hpo1']
                 hpo2_id = hpo1_id + d['range']
                 if hpo1_id not in self.hpo_anno_ids and hpo2_id not in self.hpo_anno_ids:
-                    logger.debug("hpo1_id {} hpo2_id {}".format(hpo1_id, hpo2_id))
+                    self.lca_manager.update({"_id": d['_id']}, {"$set": {"traversed": True}})
                     continue
                 lca_id = d['lca']
                 lca = self.all_hpos[lca_id]
@@ -114,66 +109,6 @@ class StoreDiseaseSim(object):
             logger.exception("range `{}` failed,\n message: {}".format(range_, str(e)))
             return False
         return True
-
-
-def store_disease_sim(db, drop=False, start_hpo1=1, end_hpo1=14000):
-    if drop:
-        db.drop_collection(disease_sim)
-        db[disease_sim].create_index([("disease",1), ("hpo",1)])
-        db[disease_sim].create_index([("info.hpo1",1), ("info.range",1)])
-        db[disease_sim].create_index([("up_date",-1)])
-        db[disease_sim].create_index([("ct_date", -1)])
-        db[disease_sim].create_index([("type",1), ("key",1)])
-
-    doc = db[disease_sim].find_one({"type": "meta", "key": "all_hpos_used"})
-    if doc is None:
-        all_hpos = db[dag_lca].find_one({"type": "meta", "key": "all_hpos_used"})['value']
-        db[disease_sim].update({"type": "meta", "key": "all_hpos_used"}, {"$set": {"value": all_hpos}}, upsert=True)
-    else:
-        all_hpos = doc['value']
-    doc = db[disease_sim].find_one({"type": "meta", "key": "all_diseases_used"})
-    if doc is None:
-        all_dis = db[anno].distinct("disease")
-        all_dis.sort()
-        db[disease_sim].update({"type": "meta", "key": "all_diseases_used"}, {"$set": {"value": all_dis}}, upsert=True)
-    else:
-        all_dis = doc['value']
-
-    cur = db[hpo_IC].find()
-    IC_map = {d['hpo']:d['IC'] for d in cur}
-
-    hpo_anno = db[anno].distinct("hpo")
-    hpo_anno_ids = map(all_hpos.index, hpo_anno)
-
-    cur = db[dag_lca].find({"hpo1": {"$gte": start_hpo1, "$lt": end_hpo1}, "type": "data"}, no_cursor_timeout=True
-                            ).sort([("hpo1",1), ("range",1)]
-                            ).batch_size(1)
-    for d in cur:
-        hpo1_id = d['hpo1']
-        hpo2_id = hpo1_id + d['range']
-        if hpo1_id not in hpo_anno_ids and hpo2_id not in hpo_anno_ids:
-            continue
-        lca_id = d['lca']
-        lca = all_hpos[lca_id]
-        IC = IC_map[lca]
-        hpo1, hpo2 = map(all_hpos.__getitem__, [hpo1_id, hpo2_id])
-        diseases1 = db[anno].find({"hpo": hpo1}).distinct("disease")
-        dis1_ids = map(all_dis.index, diseases1)
-        diseases2 = db[anno].find({"hpo": hpo2}).distinct("disease")
-        dis2_ids = map(all_dis.index, diseases2)
-        for dids, hid in [(dis1_ids, hpo2_id), (dis2_ids, hpo1_id)]:
-            for did in dids:
-                db[disease_sim].update({"disease": did, "hpo": hid}, {
-                    "$set": {
-                        "info": {"hpo1": hpo1_id, "range": d['range']},
-                        "type": "data",
-                        "up_date": datetime.datetime.utcnow()
-                    },
-                    "$max": {
-                        "score": IC
-                    }
-                }, upsert=True)
-
 
 
 if __name__ == '__main__':
