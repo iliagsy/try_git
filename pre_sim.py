@@ -61,6 +61,7 @@ class StoreDiseaseSim(object):
         self.IC_map = {d['hpo']:d['IC'] for d in cur}
         hpo_anno = self.anno_manager.distinct("hpo")
         self.hpo_anno_ids = map(self.all_hpos.index, hpo_anno)
+        logger.debug("hpo_anno_ids {}".format(self.hpo_anno_ids))
 
         ranges = self.lca_manager.find({"hpo1": {"$gte": self.start_hpo1, "$lt": self.end_hpo1}}).distinct("range")
         pool = ThreadPool(processes=self.pool_size)
