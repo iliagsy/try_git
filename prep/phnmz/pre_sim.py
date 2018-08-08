@@ -10,12 +10,7 @@ import sys
 from threading import Event
 
 
-######################
-dag_lca = 'hpo_tree_lca'
-anno = 'hpo_disease'
-hpo_IC = 'hpo_IC'
-disease_sim = 'hpo_disease_sim_'
-####################
+from gdconfig import ConfigManager
 
 
 logging_conf_d = json.load(open("logging_conf.json", 'rb'))
@@ -24,11 +19,18 @@ logger = logging.getLogger(__name__)
 
 
 class StoreDiseaseSim(object):
-    def __init__(self, disease_sim_manager, anno_manager, lca_manager, IC_manager, start_hpo1, end_hpo1, pool_size=4):
-        self.disease_sim_manager = disease_sim_manager
-        self.anno_manager = anno_manager
-        self.lca_manager = lca_manager
-        self.IC_manager = IC_manager
+    dag_lca = 'hpo_tree_lca'
+    anno = 'hpo_disease'
+    hpo_IC = 'hpo_IC'
+    disease_sim = 'hpo_disease_sim_'
+
+    def __init__(self, db, start_hpo1, end_hpo1, pool_size=4):
+        client = ConfigManager.ConfigManager().getdb().connection
+        self.db = client[db]
+        self.disease_sim_manager = self.db[self.disease_sim]
+        self.anno_manager = self.db[self.anno]
+        self.lca_manager = self.db[self.dag_lca]
+        self.IC_manager = self.db[self.hpo_IC]
         self.start_hpo1 = start_hpo1
         self.end_hpo1 = end_hpo1
         self.pool_size = pool_size
@@ -88,13 +90,13 @@ class StoreDiseaseSim(object):
                 lca = self.all_hpos[lca_id]
                 IC = self.IC_map[lca]
                 hpo1, hpo2 = map(self.all_hpos.__getitem__, [hpo1_id, hpo2_id])
-                diseases1 = db[anno].find({"hpo": hpo1}).distinct("disease")
+                diseases1 = self.anno_manager.find({"hpo": hpo1}).distinct("disease")
                 dis1_ids = map(self.all_dis.index, diseases1)
-                diseases2 = db[anno].find({"hpo": hpo2}).distinct("disease")
+                diseases2 = self.anno_manager.find({"hpo": hpo2}).distinct("disease")
                 dis2_ids = map(self.all_dis.index, diseases2)
                 for dids, hid in [(dis1_ids, hpo2_id), (dis2_ids, hpo1_id)]:
                     for did in dids:
-                        db[disease_sim].update({"disease": did, "hpo": hid}, {
+                        self.disease_sim_manager.update({"disease": did, "hpo": hid}, {
                             "$set": {
                                 "info": {"hpo1": hpo1_id, "range": d['range']},
                                 "type": "data",
@@ -114,12 +116,13 @@ class StoreDiseaseSim(object):
 def setupCommandLine():
     parser = ArgumentParser(
         description="[GeneDock] preparing hpo-disease sim score\n\n"
-                    "[***Note***]"
+                    "[***Note***]\n"
                     "collections `hpo_tree_lca`, `hpo_IC` must already exist in the database referred to.",
         formatter_class=RawTextHelpFormatter
     )
-    parser.add_argument("-s", '--start', type=int, default=1)
+    parser.add_argument("-s", '--start', type=int, default=0)
     parser.add_argument("-e", '--end', type=int, default=14000)
+    parser.add_argument("-d", "--db", required=True, help="database name to import data into; hpo_tree and hpo_anc should have been imported into the same db previously")
     return parser
 
 
@@ -127,5 +130,5 @@ if __name__ == '__main__':
     db = MongoClient("localhost", 27017)['phenomizer']
     parser = setupCommandLine()
     parsed = parser.parse_args()
-    store_disease_sim = StoreDiseaseSim(db[disease_sim], db[anno], db[dag_lca], db[hpo_IC], start_hpo1=parsed.start, end_hpo1=parsed.end)
+    store_disease_sim = StoreDiseaseSim(parsed.db, start_hpo1=parsed.start, end_hpo1=parsed.end)
     store_disease_sim.run()
