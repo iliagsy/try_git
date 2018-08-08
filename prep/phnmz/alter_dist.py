@@ -112,6 +112,5 @@ class AlterDist(object):
 
 if __name__ == '__main__':
     db = MongoClient("localhost", 27017)['phenomizer']
-    # alter(db)
     alter_dist = AlterDist(db[null_dist])
     alter_dist.run()

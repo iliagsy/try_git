@@ -13,7 +13,6 @@ hpo_anc = 'hpo_anc'
 ###################
 
 
-
 def get_lca(db, hpo1, hpo2, _):
     if hpo1 == hpo2:
         return hpo1

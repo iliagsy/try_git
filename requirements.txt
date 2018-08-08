@@ -1,2 +1,5 @@
+--extra-index-url https://genedock:zhihuishe1201@pypi.genedock.com/simple/
+
+genedock==0.1.0
+genedock_config
 pymongo==2.8.1
-pycrypto

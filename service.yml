@@ -1,0 +1,72 @@
+name: "default"
+services:
+        api_endpoint:
+                protocol: "http"
+                ip: "localhost"
+                port: "8022"
+                log_path: "./log/api_accesslog"
+        web_endpoint:
+                protocol: "http"
+                ip: "localhost"
+                port: "80"
+                log_path: "./log/web_endpoint_accesslog"
+        www_endpoint:
+                protocol: "http"
+                ip: "localhost"
+                port: "80"
+                log_path: "./log/www_endpoint_accesslog"
+        console_endpoint:
+                protocol: "http"
+                ip: "localhost"
+                port: "80"
+                log_path: "./log/console_endpoint_accesslog"
+        web:
+                ip: "127.0.0.1"
+                port: "8001"
+                log_path: "./log/web_accesslog"
+        www:
+                ip: "127.0.0.1"
+                port: "8001"
+                log_path: "./log/www_accesslog"
+        console:
+                ip: "127.0.0.1"
+                port: "8002"
+                log_path: "./log/console_accesslog"
+        email:
+                ip: "101.200.138.240"
+                port: "8101"
+                log_path: "./log/email_accesslog"
+        account:
+                protocol: "https"
+                ip: "staging-public-api.genedock.com"
+                port: "4433"
+                log_path: "./log/account_accesslog"
+        auth:
+                ip: "test-eargene.genedock.com"
+                port: "8106"
+                log_path: "./log/auth_accesslog"
+        oss_bucket:
+                data_bucket: "seqdata-sz"
+                report_bucket: "job-report-sz"
+                log_bucket:  "job-log-sz"
+                dl_bucket: "gd-download-sz"
+        registry_host:
+                internal: "cn-beijing-internal-registry.genedock.com"
+                external: "cn-beijing-registry.genedock.com"
+        env:
+                name: "standalone_web"
+                label: "开发测试环境"
+                regions: ""
+        celery:
+                broker: "mongodb://192.168.1.26:11127/gcelery_stage"
+                backend: "mongodb://192.168.1.26:11127/gcelery_stage"
+        report_api:
+                protocol: "http"
+                ip: "lims-test.genedock.com"
+                port: "80"
+                log_path: "./log/report_accesslog"
+        user_notify_api:
+                protocol: "http"
+                ip: "lims-test.genedock.com"
+                port: "80"
+                log_path: "./log/report_accesslog"

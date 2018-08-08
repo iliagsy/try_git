@@ -1,5 +1,5 @@
 # coding: utf8
-from argparse import ArgumentParser
+from argparse import ArgumentParser, RawTextHelpFormatter
 import datetime
 import json
 import logging
@@ -111,12 +111,21 @@ class StoreDiseaseSim(object):
         return True
 
 
-if __name__ == '__main__':
-    db = MongoClient("localhost", 27017)['phenomizer']
-    parser = ArgumentParser()
+def setupCommandLine():
+    parser = ArgumentParser(
+        description="[GeneDock] preparing hpo-disease sim score\n\n"
+                    "[***Note***]"
+                    "collections `hpo_tree_lca`, `hpo_IC` must already exist in the database referred to.",
+        formatter_class=RawTextHelpFormatter
+    )
     parser.add_argument("-s", '--start', type=int, default=1)
     parser.add_argument("-e", '--end', type=int, default=14000)
+    return parser
+
+
+if __name__ == '__main__':
+    db = MongoClient("localhost", 27017)['phenomizer']
+    parser = setupCommandLine()
     parsed = parser.parse_args()
-    # store_disease_sim(db, False, start_hpo1=parsed.start, end_hpo1=parsed.end)
     store_disease_sim = StoreDiseaseSim(db[disease_sim], db[anno], db[dag_lca], db[hpo_IC], start_hpo1=parsed.start, end_hpo1=parsed.end)
     store_disease_sim.run()
